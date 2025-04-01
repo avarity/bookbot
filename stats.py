@@ -1,10 +1,10 @@
 def get_num_words(text):
-    return 75767
+    return len(text.split())
 
 def count_characters(text):
     char_count = {}
     for char in text.lower():
-        if char.isalpha(): 
+        if char.isalpha():  # Проверяем, является ли символ буквой
             if char in char_count:
                 char_count[char] += 1
             else:
