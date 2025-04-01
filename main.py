@@ -4,8 +4,7 @@ from stats import get_num_words, count_characters, sort_characters
 def get_book_text(path):
     with open(path, 'r', encoding='utf-8') as f:
         text = f.read()
-    
-    # Пропускаем метаданные Project Gutenberg
+ 
     start = text.find("*** START OF THE PROJECT GUTENBERG EBOOK") + 1
     end = text.find("*** END OF THE PROJECT GUTENBERG EBOOK")
     return text[start:end].strip()
