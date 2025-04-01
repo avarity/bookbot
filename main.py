@@ -1,4 +1,4 @@
-from stats import get_num_words
+from stats import get_num_words, count_characters
 
 def get_book_text(path):
     """Читает файл, пропуская метаданные Gutenberg"""
@@ -12,8 +12,15 @@ def get_book_text(path):
 def main():
     book_path = "books/frankenstein.txt"
     text = get_book_text(book_path)
+    
+    # Подсчет слов
     num_words = get_num_words(text)
     print(f"{num_words} words found in the document")
+    
+    # Подсчет символов
+    char_counts = count_characters(text)
+    print("\nCharacter frequencies:")
+    print(char_counts)
 
 if __name__ == "__main__":
     main()
